@@ -16,6 +16,8 @@
             --dark-light: #16213e;
             --text: #ffffff;
             --text-secondary: #e0aaff;
+            --warning: #ff6b6b;
+            --warning-light: #ff9e9e;
         }
 
         * {
@@ -87,6 +89,7 @@
             display: flex;
             list-style: none;
             gap: 30px;
+            align-items: center;
         }
 
         nav a {
@@ -114,6 +117,28 @@
 
         nav a:hover::after {
             width: 80%;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+        .lang-btn {
+            background: rgba(199, 125, 255, 0.1);
+            border: 1px solid rgba(199, 125, 255, 0.3);
+            color: var(--primary-lighter);
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: rgba(199, 125, 255, 0.3);
+            color: white;
         }
 
         /* Герой секция */
@@ -275,6 +300,10 @@
             background: linear-gradient(135deg, #5a189a, #7b2cbf);
         }
 
+        .dream-wh-icon {
+            background: linear-gradient(135deg, #ff6b6b, #ff9e9e);
+        }
+
         .product-name {
             font-size: 1.8rem;
             color: var(--text-secondary);
@@ -289,6 +318,12 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background-color: #2a2a4a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
         }
 
         .product-content {
@@ -350,6 +385,164 @@
         .download-btn:hover {
             background: linear-gradient(90deg, var(--primary-light), var(--primary-lighter));
             box-shadow: 0 5px 15px rgba(123, 44, 191, 0.4);
+        }
+
+        /* Секция читів */
+        .cheats {
+            padding: 100px 0;
+            background: rgba(25, 25, 45, 0.5);
+        }
+
+        .warning-box {
+            background: rgba(255, 107, 107, 0.1);
+            border: 2px solid var(--warning);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .warning-icon {
+            font-size: 3rem;
+            color: var(--warning);
+            margin-bottom: 15px;
+        }
+
+        .warning-title {
+            color: var(--warning-light);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .warning-text {
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .warning-text strong {
+            color: var(--warning-light);
+        }
+
+        .cheat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+
+        .cheat-card {
+            background: rgba(25, 25, 45, 0.7);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 107, 107, 0.2);
+            position: relative;
+        }
+
+        .cheat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--warning), var(--warning-light));
+        }
+
+        .cheat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.2);
+            border-color: rgba(255, 107, 107, 0.4);
+        }
+
+        .cheat-header {
+            display: flex;
+            align-items: center;
+            padding: 25px 30px 0;
+            gap: 20px;
+        }
+
+        .cheat-name {
+            font-size: 1.8rem;
+            color: var(--warning-light);
+        }
+
+        .cheat-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            margin: 20px 30px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background-color: #2a2a4a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--warning-light);
+            font-size: 1.2rem;
+        }
+
+        .cheat-content {
+            padding: 25px 30px;
+        }
+
+        .cheat-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .cheat-features li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .cheat-features li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            color: var(--warning);
+            font-weight: bold;
+        }
+
+        .cheat-download-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: linear-gradient(90deg, var(--warning), var(--warning-light));
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cheat-download-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: all 0.5s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .cheat-download-btn:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cheat-download-btn:hover {
+            background: linear-gradient(90deg, var(--warning-light), #ffc4c4);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
         }
 
         /* Секция контактов */
@@ -465,13 +658,15 @@
 
             nav ul {
                 gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .hero h2 {
                 font-size: 2.5rem;
             }
 
-            .product-grid {
+            .product-grid, .cheat-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -479,7 +674,7 @@
                 flex-direction: column;
             }
 
-            .product-header {
+            .product-header, .cheat-header {
                 flex-direction: column;
                 text-align: center;
             }
@@ -497,9 +692,17 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#home">Головна</a></li>
-                        <li><a href="#products">Продукти</a></li>
-                        <li><a href="#contact">Контакти</a></li>
+                        <li><a href="#home" data-key="home">Головна</a></li>
+                        <li><a href="#products" data-key="products">Продукти</a></li>
+                        <li><a href="#cheats" data-key="cheats">Чіти</a></li>
+                        <li><a href="#contact" data-key="contact">Контакти</a></li>
+                        <li>
+                            <div class="language-switcher">
+                                <button class="lang-btn active" data-lang="uk">UA</button>
+                                <button class="lang-btn" data-lang="en">EN</button>
+                                <button class="lang-btn" data-lang="pl">PL</button>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -509,16 +712,16 @@
     <!-- Главная секция -->
     <section class="hero" id="home">
         <div class="container">
-            <h2>Інноваційні рішення для вашої продуктивності</h2>
-            <p>DreamStudio розробляє потужні інструменти для покращення вашої роботи та творчості. Спробуйте наші продукти вже сьогодні!</p>
-            <a href="#products" class="cta-button">Дізнатися більше</a>
+            <h2 data-key="heroTitle">Інноваційні рішення для вашої продуктивності</h2>
+            <p data-key="heroDesc">DreamStudio розробляє потужні інструменти для покращення вашої роботи та творчості. Спробуйте наші продукти вже сьогодні!</p>
+            <a href="#products" class="cta-button" data-key="learnMore">Дізнатися більше</a>
         </div>
     </section>
 
     <!-- Секция продуктов -->
     <section class="products" id="products">
         <div class="container">
-            <h2 class="section-title">Наші Продукти</h2>
+            <h2 class="section-title" data-key="ourProducts">Наші Продукти</h2>
             <div class="product-grid">
                 <!-- DreamPad -->
                 <div class="product-card fade-in">
@@ -528,17 +731,19 @@
                         </div>
                         <h3 class="product-name">DreamPad</h3>
                     </div>
-                    <div class="product-image" style="background-image: url('Screen/1pad.png');"></div>
+                    <div class="product-image" style="background-image: url('https://via.placeholder.com/800x450/7b2cbf/ffffff?text=DreamPad+Interface');">
+                        <span data-key="dreamPadImage" style="display: none;">Зображення DreamPad</span>
+                    </div>
                     <div class="product-content">
-                        <p>DreamPad - це сучасний текстовий редактор з розширеними функціями для розробників та творчих осіб.</p>
+                        <p data-key="dreamPadDesc">DreamPad - це сучасний текстовий редактор з розширеними функціями для розробників та творчих осіб.</p>
                         <ul class="features">
-                            <li>Підсвічування синтаксису для більш ніж 50 мов програмування</li>
-                            <li>Інтегрований термінал</li>
-                            <li>Підтримка плагінів</li>
-                            <li>Темна та світла теми</li>
-                            <li>Швидкий та легкий</li>
+                            <li data-key="dreamPadFeature1">Підсвічування синтаксису для більш ніж 50 мов програмування</li>
+                            <li data-key="dreamPadFeature2">Інтегрований термінал</li>
+                            <li data-key="dreamPadFeature3">Підтримка плагінів</li>
+                            <li data-key="dreamPadFeature4">Темна та світла теми</li>
+                            <li data-key="dreamPadFeature5">Швидкий та легкий</li>
                         </ul>
-                        <a href="Product/DreamPad.exe" class="download-btn">Завантажити DreamPad</a>
+                        <a href="Product/DreamPad.exe" class="download-btn" data-key="downloadDreamPad">Завантажити DreamPad</a>
                     </div>
                 </div>
 
@@ -550,17 +755,73 @@
                         </div>
                         <h3 class="product-name">DreamRar</h3>
                     </div>
-                    <div class="product-image" style="background-image: url('Screen/1rar.png');"></div>
+                    <div class="product-image" style="background-image: url('https://via.placeholder.com/800x450/5a189a/ffffff?text=DreamRar+Interface');">
+                        <span data-key="dreamRarImage" style="display: none;">Зображення DreamRar</span>
+                    </div>
                     <div class="product-content">
-                        <p>DreamRar - це потужний інструмент для стиснення та розпаковування файлів з унікальними функціями.</p>
+                        <p data-key="dreamRarDesc">DreamRar - це потужний інструмент для стиснення та розпаковування файлів з унікальними функціями.</p>
                         <ul class="features">
-                            <li>Підтримка всіх популярних форматів архівів</li>
-                            <li>Високий рівень стиснення</li>
-                            <li>Захист паролем та шифрування</li>
-                            <li>Розділення архівів на частини</li>
-                            <li>Інтеграція в контекстне меню</li>
+                            <li data-key="dreamRarFeature1">Підтримка всіх популярних форматів архівів</li>
+                            <li data-key="dreamRarFeature2">Високий рівень стиснення</li>
+                            <li data-key="dreamRarFeature3">Захист паролем та шифрування</li>
+                            <li data-key="dreamRarFeature4">Розділення архівів на частини</li>
+                            <li data-key="dreamRarFeature5">Інтеграція в контекстне меню</li>
                         </ul>
-                        <a href="Product/DreamRar.exe" class="download-btn">Завантажити DreamRar</a>
+                        <a href="Product/DreamRar.exe" class="download-btn" data-key="downloadDreamRar">Завантажити DreamRar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция читів -->
+    <section class="cheats" id="cheats">
+        <div class="container">
+            <h2 class="section-title" data-key="ourCheats">Чіти для ігор</h2>
+            
+            <div class="warning-box fade-in">
+                <div class="warning-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h3 class="warning-title" data-key="warningTitle">УВАГА: ВАЖЛИВЕ ПОПЕРЕДЖЕННЯ</h3>
+                <div class="warning-text">
+                    <p><strong data-key="warning1">Розробник не несе відповідальності за будь-які наслідки використання цих програм.</strong></p>
+                    <p data-key="warning2">Використання читів може призвести до:</p>
+                    <ul style="list-style: none; margin-top: 10px;">
+                        <li data-key="warning3">• Блокування вашого акаунта в грі</li>
+                        <li data-key="warning4">• Втрати прогресу та ігрових цінностей</li>
+                        <li data-key="warning5">• Погіршення ігрового досвіду для інших гравців</li>
+                        <li data-key="warning6">• Юридичних наслідків у деяких випадках</li>
+                    </ul>
+                    <p style="margin-top: 15px;" data-key="warning7">Використовуйте ці програми на свій страх і ризик. Рекомендуємо використовувати їх лише на приватних серверах або для освітніх цілей.</p>
+                </div>
+            </div>
+            
+            <div class="cheat-grid">
+                <!-- DreamWH CSS V34 -->
+                <div class="cheat-card fade-in">
+                    <div class="cheat-header">
+                        <div class="app-icon dream-wh-icon">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <h3 class="cheat-name">DreamWH CSS V34</h3>
+                    </div>
+                    <div class="cheat-image" style="background-image: url('1cheat.png');">
+                        <span data-key="cheatImage" style="display: none;">Зображення DreamWH CSS V34</span>
+                    </div>
+                    <div class="cheat-content">
+                        <p data-key="cheatDesc">Потужний чит для Counter-Strike: Source з широким функціоналом та стабільною роботою.</p>
+                        <ul class="cheat-features">
+                            <li data-key="cheatFeature1">WallHack (відображення ворогів через стіни)</li>
+                            <li data-key="cheatFeature2">Aimbot (автоматичне наведення на ціль)</li>
+                            <li data-key="cheatFeature3">Triggerbot (автоматичний постріл при наведенні)</li>
+                            <li data-key="cheatFeature4">Радар-хак (відображення всіх гравців на радарі)</li>
+                            <li data-key="cheatFeature5">BunnyHop (автоматичне стрибання для швидкого пересування)</li>
+                            <li data-key="cheatFeature6">AutoPistol (автоматичний постріл з пістолетів)</li>
+                            <li data-key="cheatFeature7">Watermark (ідентифікація версії)</li>
+                            <li data-key="cheatFeature8">Система збереження та завантаження налаштувань</li>
+                        </ul>
+                        <a href="Cheat/DreamWH_CSS V34.zip" class="cheat-download-btn" data-key="downloadCheat">Завантажити DreamWH CSS V34</a>
                     </div>
                 </div>
             </div>
@@ -570,21 +831,21 @@
     <!-- Секция контактов -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Контактна Інформація</h2>
-            <p>Зв'яжіться з нами для отримання додаткової інформації або технічної підтримки</p>
+            <h2 class="section-title" data-key="contactInfo">Контактна Інформація</h2>
+            <p data-key="contactDesc">Зв'яжіться з нами для отримання додаткової інформації або технічної підтримки</p>
             <div class="contact-info">
                 <div class="contact-item fade-in">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <div class="contact-text">Email</div>
+                    <div class="contact-text" data-key="email">Email</div>
                     <div class="contact-detail">melnikandriy57@gmail.com</div>
                 </div>
                 <div class="contact-item fade-in">
                     <div class="contact-icon">
                         <i class="fab fa-telegram"></i>
                     </div>
-                    <div class="contact-text">Telegram</div>
+                    <div class="contact-text" data-key="telegram">Telegram</div>
                     <div class="contact-detail">@PloxoyHard</div>
                 </div>
             </div>
@@ -599,7 +860,7 @@
                     <div class="logo-icon">✨</div>
                     <h1>DreamStudio</h1>
                 </div>
-                <div class="copyright">
+                <div class="copyright" data-key="copyright">
                     &copy; 2023 DreamStudio. Всі права захищені.
                 </div>
                 <div class="social-links">
@@ -618,6 +879,180 @@
     </footer>
 
     <script>
+        // Тексты для перевода
+        const translations = {
+            uk: {
+                home: "Головна",
+                products: "Продукти",
+                cheats: "Чіти",
+                contact: "Контакти",
+                heroTitle: "Інноваційні рішення для вашої продуктивності",
+                heroDesc: "DreamStudio розробляє потужні інструменти для покращення вашої роботи та творчості. Спробуйте наші продукти вже сьогодні!",
+                learnMore: "Дізнатися більше",
+                ourProducts: "Наші Продукти",
+                dreamPadDesc: "DreamPad - це сучасний текстовий редактор з розширеними функціями для розробників та творчих осіб.",
+                dreamPadFeature1: "Підсвічування синтаксису для більш ніж 50 мов програмування",
+                dreamPadFeature2: "Інтегрований термінал",
+                dreamPadFeature3: "Підтримка плагінів",
+                dreamPadFeature4: "Темна та світла теми",
+                dreamPadFeature5: "Швидкий та легкий",
+                downloadDreamPad: "Завантажити DreamPad",
+                dreamRarDesc: "DreamRar - це потужний інструмент для стиснення та розпаковування файлів з унікальними функціями.",
+                dreamRarFeature1: "Підтримка всіх популярних форматів архівів",
+                dreamRarFeature2: "Високий рівень стиснення",
+                dreamRarFeature3: "Захист паролем та шифрування",
+                dreamRarFeature4: "Розділення архівів на частини",
+                dreamRarFeature5: "Інтеграція в контекстне меню",
+                downloadDreamRar: "Завантажити DreamRar",
+                ourCheats: "Чіти для ігор",
+                warningTitle: "УВАГА: ВАЖЛИВЕ ПОПЕРЕДЖЕННЯ",
+                warning1: "Розробник не несе відповідальності за будь-які наслідки використання цих програм.",
+                warning2: "Використання читів може призвести до:",
+                warning3: "• Блокування вашого акаунта в грі",
+                warning4: "• Втрати прогресу та ігрових цінностей",
+                warning5: "• Погіршення ігрового досвіду для інших гравців",
+                warning6: "• Юридичних наслідків у деяких випадках",
+                warning7: "Використовуйте ці програми на свій страх і ризик. Рекомендуємо використовувати їх лише на приватних серверах або для освітніх цілей.",
+                cheatDesc: "Потужний чит для Counter-Strike: Source з широким функціоналом та стабільною роботою.",
+                cheatFeature1: "WallHack (відображення ворогів через стіни)",
+                cheatFeature2: "Aimbot (автоматичне наведення на ціль)",
+                cheatFeature3: "Triggerbot (автоматичний постріл при наведенні)",
+                cheatFeature4: "Радар-хак (відображення всіх гравців на радарі)",
+                cheatFeature5: "BunnyHop (автоматичне стрибання для швидкого пересування)",
+                cheatFeature6: "AutoPistol (автоматичний постріл з пістолетів)",
+                cheatFeature7: "Watermark (ідентифікація версії)",
+                cheatFeature8: "Система збереження та завантаження налаштувань",
+                downloadCheat: "Завантажити DreamWH CSS V34",
+                contactInfo: "Контактна Інформація",
+                contactDesc: "Зв'яжіться з нами для отримання додаткової інформації або технічної підтримки",
+                email: "Email",
+                telegram: "Telegram",
+                copyright: "&copy; 2023 DreamStudio. Всі права захищені."
+            },
+            en: {
+                home: "Home",
+                products: "Products",
+                cheats: "Cheats",
+                contact: "Contact",
+                heroTitle: "Innovative Solutions for Your Productivity",
+                heroDesc: "DreamStudio develops powerful tools to improve your work and creativity. Try our products today!",
+                learnMore: "Learn More",
+                ourProducts: "Our Products",
+                dreamPadDesc: "DreamPad is a modern text editor with advanced features for developers and creative individuals.",
+                dreamPadFeature1: "Syntax highlighting for more than 50 programming languages",
+                dreamPadFeature2: "Integrated terminal",
+                dreamPadFeature3: "Plugin support",
+                dreamPadFeature4: "Dark and light themes",
+                dreamPadFeature5: "Fast and lightweight",
+                downloadDreamPad: "Download DreamPad",
+                dreamRarDesc: "DreamRar is a powerful tool for compressing and extracting files with unique features.",
+                dreamRarFeature1: "Support for all popular archive formats",
+                dreamRarFeature2: "High compression ratio",
+                dreamRarFeature3: "Password protection and encryption",
+                dreamRarFeature4: "Archive splitting into parts",
+                dreamRarFeature5: "Integration into context menu",
+                downloadDreamRar: "Download DreamRar",
+                ourCheats: "Game Cheats",
+                warningTitle: "WARNING: IMPORTANT NOTICE",
+                warning1: "The developer is not responsible for any consequences of using these programs.",
+                warning2: "Using cheats can lead to:",
+                warning3: "• Blocking your account in the game",
+                warning4: "• Loss of progress and in-game valuables",
+                warning5: "• Deterioration of gaming experience for other players",
+                warning6: "• Legal consequences in some cases",
+                warning7: "Use these programs at your own risk. We recommend using them only on private servers or for educational purposes.",
+                cheatDesc: "Powerful cheat for Counter-Strike: Source with wide functionality and stable operation.",
+                cheatFeature1: "WallHack (displaying enemies through walls)",
+                cheatFeature2: "Aimbot (automatic aiming at the target)",
+                cheatFeature3: "Triggerbot (automatic shooting when aiming)",
+                cheatFeature4: "Radar hack (displaying all players on the radar)",
+                cheatFeature5: "BunnyHop (automatic jumping for fast movement)",
+                cheatFeature6: "AutoPistol (automatic shooting with pistols)",
+                cheatFeature7: "Watermark (version identification)",
+                cheatFeature8: "System for saving and loading settings",
+                downloadCheat: "Download DreamWH CSS V34",
+                contactInfo: "Contact Information",
+                contactDesc: "Contact us for additional information or technical support",
+                email: "Email",
+                telegram: "Telegram",
+                copyright: "&copy; 2023 DreamStudio. All rights reserved."
+            },
+            pl: {
+                home: "Strona główna",
+                products: "Produkty",
+                cheats: "Czity",
+                contact: "Kontakt",
+                heroTitle: "Innowacyjne rozwiązania dla Twojej produktywności",
+                heroDesc: "DreamStudio tworzy potężne narzędzia do poprawy Twojej pracy i kreatywności. Wypróbuj nasze produkty już dziś!",
+                learnMore: "Dowiedz się więcej",
+                ourProducts: "Nasze Produkty",
+                dreamPadDesc: "DreamPad to nowoczesny edytor tekstu z zaawansowanymi funkcjami dla programistów i osób kreatywnych.",
+                dreamPadFeature1: "Podświetlanie składni dla ponad 50 języków programowania",
+                dreamPadFeature2: "Zintegrowany terminal",
+                dreamPadFeature3: "Obsługa wtyczek",
+                dreamPadFeature4: "Ciemne i jasne motywy",
+                dreamPadFeature5: "Szybki i lekki",
+                downloadDreamPad: "Pobierz DreamPad",
+                dreamRarDesc: "DreamRar to potężne narzędzie do kompresji i rozpakowywania plików z unikalnymi funkcjami.",
+                dreamRarFeature1: "Obsługa wszystkich popularnych formatów archiwów",
+                dreamRarFeature2: "Wysoki stopień kompresji",
+                dreamRarFeature3: "Ochrona hasłem i szyfrowanie",
+                dreamRarFeature4: "Dzielenie archiwów na części",
+                dreamRarFeature5: "Integracja z menu kontekstowym",
+                downloadDreamRar: "Pobierz DreamRar",
+                ourCheats: "Czity do gier",
+                warningTitle: "OSTRZEŻENIE: WAŻNE OGŁOSZENIE",
+                warning1: "Deweloper nie ponosi odpowiedzialności za jakiekolwiek konsekwencje korzystania z tych programów.",
+                warning2: "Używanie czitów może prowadzić do:",
+                warning3: "• Zablokowania Twojego konta w grze",
+                warning4: "• Utraty postępu i wartości w grze",
+                warning5: "• Pogorszenia doświadczenia gry dla innych graczy",
+                warning6: "• Konsekwencji prawnych w niektórych przypadkach",
+                warning7: "Używaj tych programów na własne ryzyko. Zalecamy używanie ich tylko na prywatnych serwerach lub w celach edukacyjnych.",
+                cheatDesc: "Potężny czit do Counter-Strike: Source z szeroką funkcjonalnością i stabilną pracą.",
+                cheatFeature1: "WallHack (wyświetlanie wrogów przez ściany)",
+                cheatFeature2: "Aimbot (automatyczne celowanie w cel)",
+                cheatFeature3: "Triggerbot (automatyczne strzelanie przy celowaniu)",
+                cheatFeature4: "Radar hack (wyświetlanie wszystkich graczy na radarze)",
+                cheatFeature5: "BunnyHop (automatyczne skakanie dla szybkiego poruszania się)",
+                cheatFeature6: "AutoPistol (automatyczne strzelanie z pistoletów)",
+                cheatFeature7: "Watermark (identyfikacja wersji)",
+                cheatFeature8: "System zapisywania i ładowania ustawień",
+                downloadCheat: "Pobierz DreamWH CSS V34",
+                contactInfo: "Informacje kontaktowe",
+                contactDesc: "Skontaktuj się z nami, aby uzyskać dodatkowe informacje lub wsparcie techniczne",
+                email: "Email",
+                telegram: "Telegram",
+                copyright: "&copy; 2023 DreamStudio. Wszelkie prawa zastrzeżone."
+            }
+        };
+
+        // Функция смены языка
+        function changeLanguage(lang) {
+            // Обновляем активную кнопку
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Обновляем язык HTML
+            document.documentElement.lang = lang;
+            
+            // Обновляем тексты
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.dataset.key;
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+        }
+
         // Анимация появления элементов при скролле
         document.addEventListener('DOMContentLoaded', function() {
             const fadeElements = document.querySelectorAll('.fade-in');
@@ -649,6 +1084,13 @@
                             });
                         }
                     }
+                });
+            });
+            
+            // Обработчики для кнопок смены языка
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.dataset.lang);
                 });
             });
         });
